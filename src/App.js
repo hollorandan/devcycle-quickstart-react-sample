@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import { themeChange } from 'theme-change'
 import checkAuth from './app/auth';
 import initializeApp from './app/init';
+import { withDVCProvider } from '@devcycle/devcycle-react-sdk'
 
 // Importing pages
 const Layout = lazy(() => import('./containers/Layout'))
@@ -49,4 +50,9 @@ function App() {
   )
 }
 
-export default App
+export default withDVCProvider({
+  sdkKey: 'dvc_client_961449f7_e8f7_46f2_a03c_c2762bdf5fb7_f3b9233', 
+  user: { user_id: 'USER_ID', isAnonymous: false } 
+})
+(App)
+
