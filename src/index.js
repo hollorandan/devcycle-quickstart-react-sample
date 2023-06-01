@@ -6,6 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import store from './app/store'
 import { Provider } from 'react-redux'
 import SuspenseContent from './containers/SuspenseContent';
+import { useVariableValue } from '@devcycle/devcycle-reack-sdk'
+
+function Integration() {
+  const variableKey = 'gmail-test-integration-dan';
+  const defaultValue = false;
+  const gmailIntegrationEnabled = userVariableValue(variableKey, defaultValue)
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
